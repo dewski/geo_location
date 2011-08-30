@@ -78,7 +78,6 @@ module GeoLocation
       data[:latitude] = location[3]
       data[:longitude] = location[4]
       data[:ip] = ip
-      data[:timezone] = timezone(data[:country_code], data[:region])
       data
     end
     
@@ -106,7 +105,6 @@ module GeoLocation
       end
       
       data[:ip] = ip
-      data[:timezone] = timezone(data[:country_code], data[:region])
       
       data
     end
