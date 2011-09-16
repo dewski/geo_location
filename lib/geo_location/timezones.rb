@@ -4,6 +4,7 @@ module GeoLocation
     
     def timezone(country, region=nil)
       return nil if GeoLocation::timezones.empty?
+      return nil if country.nil? || country.empty?
       (region.nil? || region.empty?) ? GeoLocation::timezones[country.to_sym] : GeoLocation::timezones[country.to_sym][region.to_sym]
     end
     

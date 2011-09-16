@@ -106,6 +106,10 @@ class TestGeoLocation < Test::Unit::TestCase
       GeoLocation::dev_ip = '24.24.24.24'
     end
     
+    should "return nil when given nil country" do
+      assert_nil GeoLocation.timezone(nil)
+    end
+    
     should "find America/Edmonton timezone" do
       assert_equal 'America/Edmonton', GeoLocation.timezone('CA', 'AB')
     end
@@ -126,6 +130,10 @@ class TestGeoLocation < Test::Unit::TestCase
   end
   
   context 'on countries' do
+    
+    should "return nil when given nil country_code" do
+      assert_nil GeoLocation.country(nil)
+    end
     
     should "find country Canada" do
       assert_equal 'Canada', GeoLocation.country('CA')
