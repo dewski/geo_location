@@ -110,15 +110,11 @@ class TestGeoLocation < Test::Unit::TestCase
       assert_equal 'America/Edmonton', GeoLocation.timezone('CA', 'AB')
     end
     
-    should "find Europe/London timezone" do
+    should "find Europe/London timezone when given 'GB'" do
       assert_equal 'Europe/London', GeoLocation.timezone('GB')
     end
     
-    should "find Europe/London timezone" do
-      assert_equal 'Europe/London', GeoLocation.timezone('GB')
-    end
-    
-    should "find Europe/London timezone" do
+    should "find Europe/London timezone when given 'GB' and nil" do
       assert_equal 'Europe/London', GeoLocation.timezone('GB', nil)
     end
     

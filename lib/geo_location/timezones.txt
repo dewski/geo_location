@@ -196,6 +196,7 @@ ES  57  Europe/Madrid
 ES  58  Europe/Madrid
 ES  59  Europe/Madrid
 ES  60  Europe/Madrid
+GB    Europe/London
 GL  01  America/Thule
 GL  02  America/Godthab
 GL  03  America/Godthab
