@@ -5,7 +5,8 @@ module GeoLocation
     def timezone(country, region=nil)
       return nil if GeoLocation::timezones.empty?
       return nil if country.nil? || country.empty?
-      (region.nil? || region.empty?) ? GeoLocation::timezones[country.to_sym] : GeoLocation::timezones[country.to_sym][region.to_sym]
+      zones = GeoLocation::timezones[country.to_sym]
+      (zones.is_a?(Hash) && !region.nil? && !region.empty?) ? zones[region.to_sym] : zones
     end
     
     def build_timezones
@@ -17,7 +18,7 @@ module GeoLocation
           while (line = infile.gets)
             zones = line.split("\n")
             zones.each do |z|
-              zone = z.split("  ")
+              zone = z.split(',')
               country = zone[0].to_sym
               region = zone[1].empty? ? '' : zone[1].to_sym
               value = zone[2]
