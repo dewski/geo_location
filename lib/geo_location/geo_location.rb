@@ -74,6 +74,7 @@ module GeoLocation
       data[:country_code] = location[0]
       data[:country] = country(location[0])
       data[:region] = location[1]
+      data[:timezone] = timezone(location[0], location[1])
       data[:city] = location[2]
       data[:latitude] = location[3]
       data[:longitude] = location[4]
