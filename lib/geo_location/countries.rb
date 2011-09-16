@@ -4,6 +4,7 @@ module GeoLocation
     
     def country(country_code)
       return nil if GeoLocation::countries.empty?
+      return nil if country_code.nil? || country_code.empty?
       GeoLocation::countries[country_code.to_sym]
     end
     
